@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION "3.23.0")
+
+
+project("HelloWorld")
+
+add_executable("brool" "main.cpp")
+
+install(TARGETS "brool" DESTINATION bin)       #$(CMAKE_INSTALL_PREFIX)/bin
+install(FILES "main.cpp" DESTINATION src)	   #$(CMAKE_INSTALL_PREFIX)/src
+
+include(CTest)
+
+add_test("test1" "${CMAKE_CURRENT_BINARY_DIR}/brool")
